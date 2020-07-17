@@ -1,0 +1,146 @@
+---
+layout: default
+title: "Projects"
+order : 2
+header-img : "img/pro-bg-2.jpeg"
+description: "IOT + Full Stack + Mobile Apps + Medical Devices + Prototyping + Product Development + Startup"
+---
+
+<!--
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+-->
+<header class="intro-header" style="background-color: #78c5df"> 
+	<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+                    <hr class="small">
+                    <span class="subheading">{{ page.description }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Automatically create list of unique categories for projects -->
+{% assign categories ='' %}
+
+
+{% for project in site.projects %}
+        {% assign _category= project.categories |join: "," %}
+        {% assign categories=categories | append:_category | append: ","  %}
+{% endfor %}
+{% assign categories=categories | remove_last: ',' %}
+{% assign categories= categories|split:"," | uniq %}
+
+<!-- Main Content -->
+<div class="container">
+
+        <ul id="filters" class="clearfix">
+            <li><span class="filter active" data-filter=".{{ categories | join:', .'}} ">All</span></li>
+            {% for category in categories %}
+                <li><span class="filter" data-filter=".{{category}}">{{category |capitalize}}</span></li>
+            {% endfor %}
+            <!--
+			<li><span class="filter active" data-filter=".app, .card, .icon, .logo, .web">All</span></li>
+			<li><span class="filter" data-filter=".app">App</span></li>
+			<li><span class="filter" data-filter=".card">Card</span></li>
+			<li><span class="filter" data-filter=".icon">Icon</span></li>
+			<li><span class="filter" data-filter=".logo">Logo</span></li>
+            <li><span class="filter" data-filter=".web">Web</span></li>
+            -->
+        </ul>
+    <!-- https://www.queness.com/post/14577/create-a-simple-responsive-portfolio-page-with-filtering-and-hover-effect -->
+
+        <div id="portfoliolist">
+			{% for project in site.projects %}
+		
+            <div class="portfolio {{ project.categories | join: ' ' }}" data-cat="{{ project.categories | join: ' ' }}" >
+                <div class="portfolio-wrapper">
+					<a  href="{{ project.url | prepend: site.baseurl }}" ><img src="{{ site.baseurl }}/{{project.thumb-img}}" alt="" /> </a>
+                    <div class="label">
+                                <div class="label-text">
+                                    <a class="text-title" href="{{ project.url | prepend: site.baseurl }}" >{{project.title}}</a>
+                                    <!--<span class="text-category">Logo</span> -->
+                                </div>
+                                <div class="label-bg"></div>
+                        </div>
+                </div>
+			</div>
+		
+            {% endfor %} 		
+            <!--
+			<div class="portfolio logo" data-cat="logo">
+				<div class="portfolio-wrapper">				
+					<img src="{{ site.baseurl }}/img/portfolios/logo/5.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Bird Document</a>
+							<span class="text-category">Logo</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>				
+
+			<div class="portfolio app" data-cat="app">
+				<div class="portfolio-wrapper">			
+					<img src="{{ site.baseurl }}/img/portfolios/app/1.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Visual Infography</a>
+							<span class="text-category">APP</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>		
+			
+			<div class="portfolio web" data-cat="web">
+				<div class="portfolio-wrapper">						
+					<img src="{{ site.baseurl }}/img/portfolios/web/4.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Sonor's Design</a>
+							<span class="text-category">Web design</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+            </div>
+            -->				
+		</div>
+</div>
+<script src="{{ "/js/jquery.mixitup.min.js " | prepend: site.baseurl }}"></script>
+
+
+
+<script>
+    	$(function () {
+		
+		var filterList = {
+		
+			init: function () {
+			
+				// MixItUp plugin
+				// http://mixitup.io
+				$('#portfoliolist').mixItUp({
+  				selectors: {
+    			  target: '.portfolio',
+    			  filter: '.filter'	
+    		  },
+    		  load: {
+      		  //filter: ".{{ categories | join:', .'}}"
+      		}     
+				});								
+			
+			}
+
+		};
+		
+		// Run the show!
+		filterList.init();
+		
+		
+	});	
+</script>

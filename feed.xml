@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-10-03T13:41:27-04:00</updated><id>http://localhost:4000//</id><title type="html">Juned Munshi</title><subtitle>Write your site description here. It will be used as your sites meta description as well!</subtitle><entry><title type="html">How to git commit your code into open source project</title><link href="http://localhost:4000/2017/08/16/how-to-commit-code-in-open-source-project/" rel="alternate" type="text/html" title="How to git commit your code into open source project" /><published>2017-08-16T08:00:00-04:00</published><updated>2017-08-16T08:00:00-04:00</updated><id>http://localhost:4000/2017/08/16/how-to-commit-code-in-open-source-project</id><content type="html" xml:base="http://localhost:4000/2017/08/16/how-to-commit-code-in-open-source-project/">&lt;h2 id=&quot;7-simple-steps&quot;&gt;7 simple steps&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Fork the project repository
+ &lt;img src=&quot;http://localhost:4000/img/postimages/github-fork-2017-08-17.png&quot; alt=&quot;&quot; class=&quot;img-responsive&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Clone forked repository
+ &lt;img src=&quot;http://localhost:4000/img/postimages/github-clone-url-2017-08-17.png&quot; alt=&quot;&quot; class=&quot;img-responsive&quot; /&gt; &lt;br /&gt;
+Open terminal and execute following command. Replace url with yours.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone git@github.com:junedmunshi/fb-bot-framework.git
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create new branch (“newfeature”)
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git branch newfeature
+git checkout newfeature
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Make modification&lt;/li&gt;
+  &lt;li&gt;Test your code&lt;/li&gt;
+  &lt;li&gt;Commit and push your code
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git commit -am &quot;YOUR Comment&quot;
+git push origin newfeature
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create new pull request
+&lt;img src=&quot;http://localhost:4000/img/postimages/github-pull-request-2017-08-17.png&quot; alt=&quot;&quot; class=&quot;img-responsive&quot; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/postimages/github-pull-request-created-2017-08-17.png&quot; alt=&quot;&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;quick-tip-how-to-undo-push&quot;&gt;Quick Tip: How to undo push&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git push -f origin HEAD^:master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/postimages/github-undo-push-2017-08-17.png&quot; alt=&quot;&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;</content><author><name>Juned Munshi</name></author><summary type="html">7 simple steps
+
+  Fork the project repository
+ 
+  Clone forked repository
+  
+Open terminal and execute following command. Replace url with yours.
+    git clone git@github.com:junedmunshi/fb-bot-framework.git
+
+    
+  
+  Create new branch (“newfeature”)
+    git branch newfeature
+git checkout newfeature
+
+    
+  
+  Make modification
+  Test your code
+  Commit and push your code
+    git commit -am &quot;YOUR Comment&quot;
+git push origin newfeature
+
+    
+  
+  Create new pull request</summary></entry><entry><title type="html">How to install github project as module into nodejs project</title><link href="http://localhost:4000/2017/08/16/How-to-add-github-project-into-nodejs/" rel="alternate" type="text/html" title="How to install github project as module into nodejs project" /><published>2017-08-16T08:00:00-04:00</published><updated>2017-08-16T08:00:00-04:00</updated><id>http://localhost:4000/2017/08/16/How-to-add-github-project-into-nodejs</id><content type="html" xml:base="http://localhost:4000/2017/08/16/How-to-add-github-project-into-nodejs/">&lt;ol&gt;
+  &lt;li&gt;Add following under “dependencies” into package.json
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &quot;packagename&quot;:&quot;username/reponame&quot;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;p&gt;For example,&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &quot;dependencies&quot;: {
+ &quot;fb-bot-framework&quot;:&quot;junedmunshi/fb-bot-framework&quot;
+  }
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/postimages/nodejs-add-repo-2017-08-17.jpg&quot; alt=&quot;&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Install
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/postimages/nodejs-install-2017-08-17.jpg&quot; alt=&quot;&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Juned Munshi</name></author><summary type="html">Add following under “dependencies” into package.json
+     &quot;packagename&quot;:&quot;username/reponame&quot;
+
+    
+    For example,
+     &quot;dependencies&quot;: {
+ &quot;fb-bot-framework&quot;:&quot;junedmunshi/fb-bot-framework&quot;
+  }
+
+    
+    
+  
+  Install
+    npm install</summary></entry></feed>
